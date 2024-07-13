@@ -68,7 +68,12 @@ const Middle = () => {
             <div className="text-lg font-semibold">{item.name}</div>
             {/* <div className="text-gray-500">{item.category}</div> */}
             <div className="text-lg font-semibold">{item.price}</div>
+            <Link to='cart'>
+
             <button className="mt-2 py-2 px-4 bg-orange-400 text-white rounded-lg">Add to bag</button>
+            </Link>
+
+        
           </div>
         ))}
       </div>
