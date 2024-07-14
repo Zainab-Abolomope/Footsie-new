@@ -38,27 +38,34 @@ const CartAdd = () => {
                             <h1 className='font-bold'>{item.name}</h1>
                             <h3 className='text-orange-500 text-[1.3em] font-light'>{item.price}</h3>
                             <div className='flex items-center'>
-                                <button 
-                                    onClick={() => decreaseQuantity(item.id)} 
+                                <button
+                                    onClick={() => decreaseQuantity(item.id)}
                                     className='mt-2 p-2 bg-gray-300 text-black rounded'>
                                     -
                                 </button>
                                 <span className='mx-2'>{item.quantity}</span>
-                                <button 
-                                    onClick={() => increaseQuantity(item.id)} 
+                                <button
+                                    onClick={() => increaseQuantity(item.id)}
                                     className='mt-2 p-2 bg-gray-300 text-black rounded'>
                                     +
                                 </button>
                             </div>
-                            <button 
-                                onClick={() => removeFromCart(item.id)} 
+                            <button
+                                onClick={() => removeFromCart(item.id)}
                                 className='mt-2 p-2 bg-orange-500 text-white rounded'>
                                 Remove from Cart
                             </button>
                         </div>
+
                     </div>
                 ))}
             </div>
+            
+            <Link to='/checkout'>
+                            <button className='px-6 lg:px-8 py-4 text-black border border-black cursor-pointer rounded-2xl hover:scale-105 translate-x-6 text-orange-400'>
+                                Proceed to Checkout
+                            </button>
+                        </Link>
         </section>
     );
 };
