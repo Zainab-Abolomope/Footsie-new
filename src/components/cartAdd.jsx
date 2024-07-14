@@ -1,9 +1,9 @@
 import React from 'react';
-// import { useCart } from '../context/CartContext';
+import { useCart } from '../context/cartContext';
 import { Link } from 'react-router-dom';
 
-const CartPage = () => {
-    // const { cart, removeFromCart } = useCart();
+const CartAdd = () => {
+    const { cart, removeFromCart, increaseQuantity, decreaseQuantity } = useCart();
 
     if (cart.length === 0) {
         return (
@@ -31,13 +31,28 @@ const CartPage = () => {
             <div className='lg:flex flex-col gap-[2em]'>
                 {cart.map((item, index) => (
                     <div key={index} className='flex flex-row bg-white rounded-xl p-[1em]'>
-                        <img className='w-[10em] h-[10em] rounded-xl' src={item.img} alt='product' />
+                        {item.photos && item.photos.length > 0 && (
+                            <img src={`https://api.timbu.cloud/images/${item.photos[0].url}`} alt="" className='hover:scale-105 duration-300 w-[24em] h-[15em]' />
+                        )}
                         <div className='flex flex-col ml-[1em]'>
                             <h1 className='font-bold'>{item.name}</h1>
                             <h3 className='text-orange-500 text-[1.3em] font-light'>{item.price}</h3>
+                            <div className='flex items-center'>
+                                <button 
+                                    onClick={() => decreaseQuantity(item.id)} 
+                                    className='mt-2 p-2 bg-gray-300 text-black rounded'>
+                                    -
+                                </button>
+                                <span className='mx-2'>{item.quantity}</span>
+                                <button 
+                                    onClick={() => increaseQuantity(item.id)} 
+                                    className='mt-2 p-2 bg-gray-300 text-black rounded'>
+                                    +
+                                </button>
+                            </div>
                             <button 
-                                // onClick={() => removeFromCart(item.id)} 
-                                className='mt-2 p-2 bg-red-500 text-white rounded'>
+                                onClick={() => removeFromCart(item.id)} 
+                                className='mt-2 p-2 bg-orange-500 text-white rounded'>
                                 Remove from Cart
                             </button>
                         </div>
@@ -48,4 +63,4 @@ const CartPage = () => {
     );
 };
 
-export default CartPage;
+export default CartAdd;

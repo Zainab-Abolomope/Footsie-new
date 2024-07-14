@@ -19,7 +19,7 @@ const Nav = () => {
         </div>
 
         {/* Cart button */}
-        <Link to='/cart'>
+        <Link to='/cartAdd'>
           <button className='flex items-center  px-4 py-2 text-white  hover:scale-105 duration-300'>
             <span className='mr-2'>Your Bag</span>
             <CiShoppingCart className='text-2xl' />

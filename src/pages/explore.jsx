@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { RiArrowDropDownLine, RiArrowDropUpLine } from "react-icons/ri";
 import { Link } from 'react-router-dom';
 import useProducts from '../hooks/FetchProdduct';
-import DataLoader from './DataLoader/DataLoader';
-import Pagination from './Paginate';
+import DataLoader from '../components/DataLoader/DataLoader';
+import Pagination from '../components/Paginate';
 import { useCart } from '../context/cartContext';
+
 
 const Middle = () => {
     const [page, setPage] = useState(1);

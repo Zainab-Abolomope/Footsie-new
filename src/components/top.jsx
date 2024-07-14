@@ -14,7 +14,7 @@ const Top = () => {
         <p className=''>
           Through our collections, we blur the borders between high fashion and high performance. Like our sneakers by Stella McCartney athletic clothing collection - designed to look the part inside and outside of the gym, or some of our adidas Originals lifestyle pieces that can be worn as sports apparel too.
         </p>
-        <Link to='/cart' className='block mt-4 '>
+        <Link to='/explore' className='block mt-4 '>
           <img src="./explore.png" className='cursor-pointer  hover:scale-105 duration-300' alt="Explore Image" />
         </Link>
       </div>

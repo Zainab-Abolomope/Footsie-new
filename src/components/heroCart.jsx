@@ -1,6 +1,20 @@
 import React from 'react';
 
 const HeroCart = () => {
+
+  const fetchProductById = async (id) => {
+    try {
+      const response = await fetch(`https://example.com/api/products/${id}`);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const product = await response.json();
+      return product;
+    } catch (error) {
+      console.error('There was a problem with the fetch operation:', error);
+    }
+  };
+  
   return (
     <>
       <div className='text-center'>
