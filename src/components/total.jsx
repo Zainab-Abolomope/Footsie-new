@@ -6,13 +6,13 @@ const Total = () => {
   const [expirationDate, setExpirationDate] = useState('');
   const [cvvNumber, setCvvNumber] = useState('');
   const [houseAddress, setHouseAddress] = useState('');
-  const [paymentMethod, setPaymentMethod] = useState('card'); // Default to card payment
+  const [paymentMethod, setPaymentMethod] = useState('card'); 
   const [isOrderPlaced, setIsOrderPlaced] = useState(false);
 
   const handlePlaceOrder = () => {
-    // Simulate placing order logic (validate inputs, send to backend, etc.)
+  
     if (cardholderName && cardNumber && expirationDate && cvvNumber && houseAddress) {
-      // In a real application, you would typically send this data to a server
+     
       console.log('Order placed:', {
         cardholderName,
         cardNumber,

@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from '../components/navCheckout'
+import Footer from '../components/footerCheckout'
 
 import CartAdd from '../components/cartAdd'
 const cartPage = () => {
@@ -9,6 +10,7 @@ const cartPage = () => {
 
 
         <CartAdd />
+        <Footer />
     </div>
   )
 }
